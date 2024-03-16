@@ -1,5 +1,6 @@
 package Basics.Recusion;
 
+// Print 1 to n
 public class Print1toN {
     //print 1 to 10 with recursion
     public static void printNum(int n){
