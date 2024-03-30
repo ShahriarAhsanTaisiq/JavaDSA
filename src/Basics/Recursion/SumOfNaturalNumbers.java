@@ -1,4 +1,4 @@
-package Basics.Recusion;
+package Basics.Recursion;
 
 // Print sum of first n natural numbers
 public class SumOfNaturalNumbers {

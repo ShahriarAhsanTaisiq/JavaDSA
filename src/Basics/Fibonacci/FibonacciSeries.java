@@ -1,4 +1,4 @@
-package Basics;
+package Basics.Fibonacci;
 
 import java.util.Scanner;
 
@@ -7,15 +7,15 @@ public class FibonacciSeries {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the value of n: ");
         int n = input.nextInt();
-        int a = 0, sum = 1;
+        int a = 0, b = 1;
         System.out.print(a + " ");
 
         if (n>1){
             for (int i=2; i<=n; i++){
-                System.out.print( sum + " ");
+                System.out.print( b + " ");
 
-                int temp = sum;
-                sum = a + sum;
+                int temp = b;
+                b = a + b;
                 a = temp;
 
             }

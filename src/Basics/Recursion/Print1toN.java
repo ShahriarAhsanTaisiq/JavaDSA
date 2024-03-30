@@ -1,4 +1,4 @@
-package Basics.Recusion;
+package Basics.Recursion;
 
 // Print 1 to n
 public class Print1toN {
