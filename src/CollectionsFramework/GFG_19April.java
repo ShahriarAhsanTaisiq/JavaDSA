@@ -29,11 +29,12 @@ Constraints:
 1 ≤ n, m ≤ 10^5
 -10^9 ≤ A[i], B[i] ≤ 10^9
 */
+
 import java.util.ArrayList;
 import java.util.HashSet;
 class MissingInSecondArray
 {
-    ArrayList<Integer> findMissing(int a[], int b[], int n, int m)
+    ArrayList<Integer> findMissing(int[] a, int[] b, int n, int m)
     {
         HashSet<Integer> setB = new HashSet<>();
         for (int num : b) {
