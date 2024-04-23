@@ -1,4 +1,4 @@
-package CollectionsFramework;
+package GFGRegularProblem;
 /* Find missing in second array
 Given two arrays a of size n and b of size m, the task is to find numbers which are present in the first array, but not present in the second array.
 Example 1:
