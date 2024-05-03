@@ -32,24 +32,23 @@ Constraints:
 1 <= Data of a node <= 10^9
 *
 */
-class Node {
+class Node2May {
     int data;
-    Node left, right;
+    Node2May left, right;
 
-    Node(int item) {
+    Node2May(int item) {
         data = item;
         left = right = null;
     }
 }
 
 class Tree {
-    // Serialization
-    public ArrayList<Integer> serialize(Node root) {
+    public ArrayList<Integer> serialize(Node2May root) {
         ArrayList<Integer> level = new ArrayList<>();
-        Queue<Node> q = new LinkedList<>();
+        Queue<Node2May> q = new LinkedList<>();
         q.add(root);
         while (!q.isEmpty()) {
-            Node p = q.poll();
+            Node2May p = q.poll();
             if (p == null) {
                 level.add(-1);
             } else {
@@ -62,25 +61,25 @@ class Tree {
     }
 
     // Deserialization
-    public Node deSerialize(ArrayList<Integer> a) {
+    public Node2May deSerialize(ArrayList<Integer> a) {
         if (a == null || a.size() == 0 || a.get(0) == -1)
             return null;
 
-        Node root = new Node(a.get(0));
-        Queue<Node> q = new LinkedList<>();
+        Node2May root = new Node2May(a.get(0));
+        Queue<Node2May> q = new LinkedList<>();
         q.add(root);
         int i = 1;
         while (!q.isEmpty() && i < a.size()) {
-            Node p = q.poll();
+            Node2May p = q.poll();
             Integer leftVal = a.get(i++);
             Integer rightVal = i < a.size() ? a.get(i++) : null;
 
             if (leftVal != null && leftVal != -1) {
-                p.left = new Node(leftVal);
+                p.left = new Node2May(leftVal);
                 q.add(p.left);
             }
             if (rightVal != null && rightVal != -1) {
-                p.right = new Node(rightVal);
+                p.right = new Node2May(rightVal);
                 q.add(p.right);
             }
         }
@@ -89,7 +88,7 @@ class Tree {
 }
 
 public class GFG_2May {
-    public static void inOrder(Node root) {
+    public static void inOrder(Node2May root) {
         if (root == null)
             return;
         inOrder(root.left);
@@ -99,11 +98,11 @@ public class GFG_2May {
 
     public static void main(String[] args) {
         // Create a sample binary tree
-        Node root = new Node(1);
-        root.left = new Node(2);
-        root.right = new Node(3);
-        root.left.left = new Node(4);
-        root.left.right = new Node(5);
+        Node2May root = new Node2May(1);
+        root.left = new Node2May(2);
+        root.right = new Node2May(3);
+        root.left.left = new Node2May(4);
+        root.left.right = new Node2May(5);
 
         // Create an object of Tree class
         Tree tree = new Tree();
@@ -113,7 +112,7 @@ public class GFG_2May {
         System.out.println("Serialized Tree: " + serialized);
 
         // Deserialize the serialized binary tree
-        Node deserializedRoot = tree.deSerialize(serialized);
+        Node2May deserializedRoot = tree.deSerialize(serialized);
 
         // Print the in-order traversal of the deserialized tree
         System.out.print("In-order Traversal of Deserialized Tree: ");
