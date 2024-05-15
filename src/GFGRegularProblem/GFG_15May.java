@@ -2,6 +2,8 @@ package GFGRegularProblem;
 
 import java.util.*;
 
+import static GFGRegularProblem.EmailAccountMerge.accountsMerge;
+
 /* Account Merge
 * Given a list of accounts of size n where each element accounts [ i ] is a list of strings, where the first element account [ i ][ 0 ]  is a name, and the rest of the elements are emails representing emails of the account.
 Geek wants you to merge these accounts. Two accounts belong to the same person if there is some common email to both accounts. Note that even if two accounts have the same name, they may belong to different people as people could have the same name. A person can have any number of accounts initially, but all of their accounts have the same name.
@@ -104,7 +106,7 @@ class EmailAccountMerge {
 }
 public class GFG_15May {
     public static void main(String[] args) {
-        EmailAccountMerge solution = new EmailAccountMerge();
+        //EmailAccountMerge solution = new EmailAccountMerge();
 
         // Example 1
         List<List<String>> accounts1 = Arrays.asList(
@@ -113,7 +115,7 @@ public class GFG_15May {
                 Arrays.asList("Mary", "mary@mail.com"),
                 Arrays.asList("John", "johnnybravo@mail.com")
         );
-        List<List<String>> result1 = solution.accountsMerge(accounts1);
+        List<List<String>> result1 = accountsMerge(accounts1);
         printResult(result1);
 
         // Example 2
@@ -124,7 +126,7 @@ public class GFG_15May {
                 Arrays.asList("Hanzo", "Hanzo3@m.co", "Hanzo1@m.co", "Hanzo0@m.co"),
                 Arrays.asList("Fern", "Fern5@m.co", "Fern1@m.co", "Fern0@m.co")
         );
-        List<List<String>> result2 = solution.accountsMerge(accounts2);
+        List<List<String>> result2 = accountsMerge(accounts2);
         printResult(result2);
     }
 
