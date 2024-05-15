@@ -6,11 +6,8 @@ import java.util.*;
 * Given a list of accounts of size n where each element accounts [ i ] is a list of strings, where the first element account [ i ][ 0 ]  is a name, and the rest of the elements are emails representing emails of the account.
 Geek wants you to merge these accounts. Two accounts belong to the same person if there is some common email to both accounts. Note that even if two accounts have the same name, they may belong to different people as people could have the same name. A person can have any number of accounts initially, but all of their accounts have the same name.
 After merging the accounts, return the accounts in the following format: The first element of each account is the name, and the rest of the elements are emails in sorted order.
-
 Note: Accounts themselves can be returned in any order.
-
 Example 1:
-
 Input:
 n = 4
 accounts [ ] =
@@ -25,7 +22,6 @@ Output:
 Explanation:
 The first and second John's are the same person as they have the common email "johnsmith@mail.com". The third John and Mary are different people as none of their email addresses are used by other accounts.We could return these arrays in any order, for example, the answer [['Mary', 'mary@mail.com'], ['John', 'johnnybravo@mail.com'], ['John', 'john00@mail.com', 'john_newyork@mail.com', 'johnsmith@mail.com']] would still be accepted.
 Example 2:
-
 Input:
 n = 5
 accounts [ ] =
@@ -47,7 +43,6 @@ You don't need to read or print anything. Your task is to complete the function 
 
 Expected Time Complexity: O(n*m*logn) - where n is the size of accounts and m is the size of the number of strings for a name.
 Expected Auxiliary Space: O(n*m) - where n is the size of accounts and m is the size of the number of strings for a name.
-
 Constraints:
 1 <= n <= 1000
 2 <= accounts[ i ].size <= 10
