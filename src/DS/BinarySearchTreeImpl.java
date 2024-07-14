@@ -32,6 +32,20 @@ class BinarySearchTree{
         System.out.print(root.val+ " ");
         inOrder(root.right);
     }
+    public boolean searchInBST(NodeBST root, int target){
+        if (root == null){
+            return false;
+        }
+        if (root.val == target){
+            return true;
+        }
+        if (target < root.val){
+           return searchInBST(root.left,target);
+        }
+        else {
+            return searchInBST(root.right,target);
+        }
+    }
 }
 public class BinarySearchTreeImpl {
     public static void main(String[] args) {
@@ -43,5 +57,6 @@ public class BinarySearchTreeImpl {
             root = bst.insert(root, values[i]);
         }
         bst.inOrder(root);
+        System.out.println(bst.searchInBST(root,8));
     }
 }
