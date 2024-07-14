@@ -46,6 +46,38 @@ class BinarySearchTree{
             return searchInBST(root.right,target);
         }
     }
+
+    public NodeBST delete(NodeBST root, int val){
+        if(root == null){
+            return null;
+        }
+        if (root.val > val){
+            root.left = delete(root.left,val);
+        } else if(root.val < val){
+            root.right = delete(root.right, val);
+        }else {
+            if (root.left == null && root.right == null){
+                return null;
+            }
+            if (root.left == null){
+                return root.right;
+            } else if (root.right == null) {
+                return root.left;
+            }
+            NodeBST IS = inOrderSuccessor(root.right);
+            root.val = IS.val;
+            root.right = delete(root.right, IS.val);
+        }
+        return root;
+    }
+
+    private NodeBST inOrderSuccessor(NodeBST root) {
+        while (root.left != null){
+            root = root.left;
+        }
+        return root;
+    }
+
 }
 public class BinarySearchTreeImpl {
     public static void main(String[] args) {
@@ -57,6 +89,8 @@ public class BinarySearchTreeImpl {
             root = bst.insert(root, values[i]);
         }
         bst.inOrder(root);
-        System.out.println(bst.searchInBST(root,8));
+        System.out.println("\n"+ bst.searchInBST(root,8));
+        bst.delete(root,4);
+        bst.inOrder(root);
     }
 }
