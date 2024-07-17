@@ -78,10 +78,25 @@ class BinarySearchTree{
         return root;
     }
 
+   public void printInRange(NodeBST root, int x, int y){
+        if (root == null){
+            return;
+        }
+        if (x <= root.val && y >= root.val){
+            printInRange(root.left,x,y);
+            System.out.print(root.val+" ");
+            printInRange(root.right,x,y);
+        } else if (x >= root.val) {
+            printInRange(root.right,x,y);
+        } else {
+            printInRange(root.left,x,y);
+        }
+   }
+
 }
 public class BinarySearchTreeImpl {
     public static void main(String[] args) {
-        int[] values = {5,1,3,4,2,7};
+        int[] values = {8,5,3,1,4,6,10,11,14};
         NodeBST root = null;
         BinarySearchTree bst = new BinarySearchTree();
 
@@ -92,5 +107,7 @@ public class BinarySearchTreeImpl {
         System.out.println("\n"+ bst.searchInBST(root,8));
         bst.delete(root,4);
         bst.inOrder(root);
+        System.out.println("\nPrint in Range: ");
+        bst.printInRange(root,6,10);
     }
 }
