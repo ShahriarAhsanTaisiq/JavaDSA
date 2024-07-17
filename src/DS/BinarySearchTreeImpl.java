@@ -92,7 +92,6 @@ class BinarySearchTree{
             printInRange(root.left,x,y);
         }
    }
-
 }
 public class BinarySearchTreeImpl {
     public static void main(String[] args) {
